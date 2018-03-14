@@ -23,6 +23,7 @@ $(function(){
 		var dayOfWeek=getWeekday(years,months,1); //获取当前月得第一天是周几
 		drawDate(years,months,dayOfWeek,nowday);
     });
+	//年份的下拉框值在改变的时候改变右边的日期。
     $('#yearSe').change(function(){
     	var years=$('#yearSe').val();   //当前年份
 		 var months=getMonth(this.innerText);       //当前月份
@@ -36,42 +37,41 @@ $(function(){
 		var dayOfWeek=getWeekday(years,months,1); //获取当前月得第一天是周几
 		drawDate(years,months,dayOfWeek,nowday);
     })
+	//点击小图标初始化界面
     $("#img").bind("click",function(){
 	   initVersion();
 	})
-})  
-
-	function getWeekday(years,months,days){
-		var NewDate=new Date(years,months-1,days);
-		return NewDate.getDay();  //获取当前天数是周几
+})
+  
+//获取当前天数是周几
+function getWeekday(years,months,days){
+	var NewDate=new Date(years,months-1,days);
+	return NewDate.getDay();  
+}
+function getMonth(months){
+	var monthsData='';
+	debugger;
+	switch(trim(months)){
+		case '一月':monthsData=1;break;
+		case '二月':monthsData=2;break;
+		case '三月':monthsData=3;break;
+		case '四月':monthsData=4;break;
+		case '五月':monthsData=5;break;
+		case '六月':monthsData=6;break;
+		case '七月':monthsData=7;break;
+		case '八月':monthsData=8;break;
+		case '九月':monthsData=9;break;
+		case '十月':monthsData=10;break;
+		case '十一月':monthsData=11;break;
+		case '十二月':monthsData=12;break;
 	}
-	function getMonth(months){
-		var monthsData='';
-		debugger;
-		switch(trim(months)){
-			case '一月':monthsData=1;break;
-			case '二月':monthsData=2;break;
-			case '三月':monthsData=3;break;
-			case '四月':monthsData=4;break;
-			case '五月':monthsData=5;break;
-			case '六月':monthsData=6;break;
-			case '七月':monthsData=7;break;
-			case '八月':monthsData=8;break;
-			case '九月':monthsData=9;break;
-			case '十月':monthsData=10;break;
-			case '十一月':monthsData=11;break;
-			case '十二月':monthsData=12;break;
-		}
-		return monthsData;
-	}
-	//去除空格
-	function trim(str) {
-	  return str.replace(/(^\s+)|(\s+$)/g, "");
-	}
-	
-	
-
-
+	return monthsData;
+}
+//去除空格
+function trim(str) {
+  return str.replace(/(^\s+)|(\s+$)/g, "");
+}
+		
 
 function getRun(years){
 	//判断当前年份是否是闰年
@@ -81,6 +81,7 @@ function getRun(years){
 		return false;
 	}
 }
+
 function getDaysFromMonths(years,months){
 	//根据年月获取有多少天
 	var daysValue='';
@@ -95,6 +96,7 @@ function getDaysFromMonths(years,months){
 		}
 		break;
 	}
+	return daysValue;
 }
 /*
  * @param 
