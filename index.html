@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>日历</title>
+	<script type="text/javascript" src="js/jquery-1.5.min.js" ></script>
+	<script type="text/javascript" src="js/js.js" ></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<style type="text/css">
+
+		#container{
+			width: 1600px;
+		}
+		#left{
+			width: 160px;
+			height: 500px;
+
+			float: left;
+		}
+		#content{
+			width: 1100px;
+			height: 590px;
+			background: url(images/002.jpg);
+			float: left;
+			margin-left: 100px;
+			margin-top: 50px;
+		}
+		th{
+			font: 20px "微软雅黑";
+			text-align: center;
+			color: #363636;
+		}
+		
+		#months table{
+			
+			width: 140px;
+			height: 300px;
+			font: 18px "微软雅黑";
+			margin-top: 5px;
+			margin-left: 10px;
+		}
+		#months td{
+			height: 15px;
+		}
+		#months a{
+			display: block;
+			height: 35px;
+			text-align: center;
+			padding-top: 5px;
+		}
+		#months a:link{
+			color: #FF0000;
+		}
+		#months a:visited{
+			color: #FF0000;
+		}
+		#months a:hover{
+			color: #FFF;
+  		    background: url(images/nav_on.gif)
+		}
+		
+		.op-calendar-new-table{
+			border: dotted 1px;
+		}
+		.op-calendar-new-table a{
+			display: block;
+			width: 169px;
+		}
+		.op-calendar-new-table a:hover{
+			color: #FFF;
+  		    
+			
+		}
+		.op-calendar-new-table table{
+			width: 1190px;
+			border: 2px;
+			border: dashed orange;
+		}
+		.op-calendar-new-table td{
+			color: black;
+			
+		}
+		#years{
+			padding: 10px;
+		}
+		select{
+			border: 1px;
+			width: 90px;
+			height: 35px;
+			font: 15px "微软雅黑";
+			text-align: center;
+			padding-left: 10px;
+			padding-top: 10px;
+			margin-top: 10px;
+			appearance:none;
+			-moz-appearance:none;
+			-webkit-appearance:none;
+			float: left;
+			 /*在选择框的最右侧中间显示小箭头图片*/
+            background: url(images/箭头.jpg) no-repeat scroll right center transparent;
+
+
+			/*为下拉小箭头留出一点位置，避免被文字覆盖*/
+			padding-right: 14px;
+		}
+		select:hover{
+			background: url(images/nav_on.gif);
+		}
+		#img{
+			width: 40px;
+			float: left;
+			margin-left: 20px;
+			margin-top: auto;
+		}
+		.tim{
+			width: 167px;
+			height: 10px;
+			color: burlywood;
+			text-align: center;
+		}
+	</style>
+	
+</head>
+<body>
+	<div id="container">
+       <div id="left">
+   		 <!--此区域显示左边的年月信息-->
+   		   <div id="years">
+               <select id="yearSe">
+               </select>
+   		   </div>
+   		   <img src="images/小姑娘.jpg" id="img"/>
+   		   <div id="months">
+           		<table id="tb">
+           			<tr>
+           				<td><a href="#">一月</a></td>
+           				<td><a href="#">二月</a></td>
+           			</tr>
+           			<tr>
+           				<td><a href="#">三月</a></td>
+           				<td><a href="#">四月</a></td>
+           			</tr>
+           			<tr>
+           				<td><a href="#">五月</a> </td>
+           				<td><a href="#">六月</a></td>
+           			</tr>
+           			<tr>
+           				<td><a href="#">七月</a></td>
+           				<td><a href="#">八月</a> </td>
+           			</tr>
+           			<tr>
+           				<td><a href="#">九月</a> </td>
+           				<td><a href="#">十月 </a></td>
+           			</tr>
+           			<tr>
+           				<td><a href="#">十一月</a></td>
+           				<td><a href="#">十二月</a></td>
+           			</tr>
+           		</table>
+   		   </div>
+   		   <div id="info">
+   		   </div>
+       </div>
+       <div id="content">
+		 <!--此区域显示右边的日期信息-->
+		  <div id="cander">
+		    
+		  </div>
+       </div>
+	</div>
+</body>
+</html>
